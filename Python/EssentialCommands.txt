@@ -1,0 +1,13 @@
+
+pip install packageName => Installs packageName
+pip install packageName==versoin => Installs packageName for given version
+pip uninstall packageName => Uninstalls packageName
+pip list => Lists all the packages installed
+pip freeze > requirements.txt => adds all version of packages to install
+pip install -r .\requirements.txt => automatically installs all the requirements from requirements.txt
+
+virtualenv --system-site-packages envFolderName =>  creates virtual environment with all the packages
+                                                    that are installed in our system into virtual env
+virtualenv envFolderName            => creates virtual environment in given folder
+source envFolderName/bin/activate   => activates the virtual environment
+deactivate                          => deactivates the virtual environment

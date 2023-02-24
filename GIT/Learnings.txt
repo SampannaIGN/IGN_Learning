@@ -1,0 +1,51 @@
+Stages of file/folder => 
+Unstaged/untracked ------->Stage------->Commit
+
+Basic---->
+git init -> initialize repository
+git status -> check staging info
+git add . OR git add fileName -> add file for staging
+git commit -m "MESSAGE" -> Commits all the files that are staged & not modified
+git commit -a -m "DIRECT" -> Commits staged modified files directly
+git commit --ammend -m "NEW MESSAGE" -> Edit the latest commit with different message
+git push --force origin master -> To push after editing latest commit
+
+Less used---->
+git log -> gives commit information
+rm -rf .git -> deletes everything that git has created(like .git file)
+git clone url -> clones the repo for you
+git rm --cached file1 file2 & so on... (staged to untracked)
+git rm -r --cached folder1 folder2 & so on...(staged to untracked) [r->recursively]
+git rm -f --cached file1 file2 & so on... (staged modified to untracked forcefully) [f->forcefully]
+mv fileSource fileDestination (moves untracked file from source to dest) (Also used to rename untracked file)
+git mv fileSource fileDestination (moves staged file from source to dest & stages them again) (Also used to rename staged file & then stage again)
+
+Folder/file related ------>
+mkdir folderName (to create a new folder)
+touch fileName (to create a new file)
+cat fileName (to view the file)
+cat > fileName (to overwrite a file (even allows for multiple line entry))
+echo 'Message' >>fileName (to append a message at the end of file even multiple lines also)
+start fileName (opens the file in editable form in notepad or excel or others)
+
+remote related ------>
+git remote add origin "URL" (to connect with given repo(given in URL form))
+git push origin master (to push to the repo)
+git pull origin master (to pull from the repo)
+git checkout -- filename (staged modified file 'fileName' goes to staged)
+git checkout -f (all staged modified files goes to previous commit only if there is previous commit else doesn't do anything)
+git reset head~no. (goes to no.(1,2,3...) of commits before)
+git reset "hex code" (goes to that commit of specified hex code(obtained from git log))
+ 
+
+branch change related ----->
+git branch (shows current working branch)
+git branch branchName (creates a new branch with name branchName)
+git checkout branchName (switches to branchName)
+git push origin branchName (pushes new branchName to repo)
+git merge branchName (make sure you come to previous branch before merging)
+git branch -d branchName (deletes branch from my laptop)
+git push origin --delete branchName (deletes branch from remote)
+
+/dir/   ----> ignore only dir in pwd
+dir/    ----> ignore all dir within different folders as well
