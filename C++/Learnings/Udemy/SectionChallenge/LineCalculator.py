@@ -15,15 +15,14 @@ def rename(oldName,newName):
 
     os.remove(oldName)
 
-
-def listDir(fileExtension,path,list):
+def listDir(path,list):
     entries = os.listdir(path)
 
     for value in entries:
         if(os.path.isdir(path+"/"+value)):
             listDir(path+"/"+value,list)
         else:
-            if(fileExtension in value):
+            if(".cpp" in value or ".h" in value):
                 list.append(path+"/"+value)
     
     return list
@@ -46,5 +45,7 @@ def getLineCount(fileList):
     return total_line
         
 #rename("Sample2.txt","Sample1.txt")
-fileList = listDir("",".",[])
+fileList = listDir(".",[])
+print(fileList)
 getLineCount(fileList)
+

@@ -41,7 +41,7 @@ for i in range(2,7):
         continue
     print(i,end=" ")
 else:
-    print("***else executed")
+    print("****else executed")
 
 
 #   pass is a dummy statement in python that doesn't perform any operation
