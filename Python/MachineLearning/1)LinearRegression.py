@@ -17,7 +17,7 @@ diabetes = datasets.load_diabetes()
 #print(diabetes.DESCR)
 #print(diabetes.feature_names)#['age', 'sex', 'bmi', 'bp', 's1', 's2', 's3', 's4', 's5', 's6'] are the features
 
-#print(diabetes.data[:,np.newaxis,3])
+#print(diabetes.data[:,np.newaxis,2])
 '''
 considers only column 3 elements and returns 2d numpy array
 Ex :[[1,2,3,4],[5,6,7,8],[9,10,11,12]]  => [[3],[7],[11]]
@@ -31,6 +31,7 @@ which can't plotted
 inp_data = diabetes.data[:,np.newaxis,3]#only one feature
 #inp_data = diabetes.data[:,[0,1,3,4,5,6,9]]#any random feature
 #inp_data = diabetes.data[:,0:10]#all feature
+#inp_data = diabetes.data[:,3]#gives 1D array but we can reshape it
 
 #Comment/uncomment one of the above 3 line for only considering one feature
 #Let's consider feature 'bp' which is feature number 3 & first 412 data for training
@@ -59,6 +60,6 @@ print("intercept = ", model.intercept_)#w0
 
 #plotting test data
 
-# plt.scatter(diabetes_x_test,diabetes_y_test.ravel())#since use reshape for y_test
-# plt.plot(diabetes_x_test,diabetes_y_predict.ravel())#since used reshape for y_predict
-# plt.show()
+plt.scatter(diabetes_x_test.ravel(),diabetes_y_test.ravel())#since use reshape for y_test
+plt.plot(diabetes_x_test.ravel(),diabetes_y_predict.ravel())#since used reshape for y_predict
+plt.show()

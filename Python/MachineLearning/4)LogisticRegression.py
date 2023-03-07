@@ -20,7 +20,8 @@ iris = datasets.load_iris()
 # print(iris.data)
 X = iris["data"][:,2:3]#will return 2D with each element of 1D having 2nd col data
 #X = iris["data"][:,2] will return 1D array from col 2 of iris data
-Y = npArrayToBinary(iris["target"],2)
+print(iris["target"])
+Y = npArrayToBinary(iris["target"],2)#verginica or not
 model = LogisticRegression()
 model.fit(X,Y)
 ex1 = model.predict([[1.7]])

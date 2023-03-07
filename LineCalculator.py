@@ -1,30 +1,22 @@
-def computeOutput(input,coeff):
-    output = []
+import matplotlib.pyplot as plt
+import numpy as np
+import math
 
-    for i in range(0,len(input)-len(coeff)+1):
-        sum = 0
-        coeff_index = 0
-        for j in range(i,i+len(coeff)):
-            sum += input[j]*coeff[coeff_index]
-            coeff_index += 1
-        output.append(sum)
-    
-    return output
+#eq = (x-h)2 + (y-k)2 = r2
 
-input = []
-coeff = []
+def getMeY(x,r):
+    return math.sqrt((r*r)-(x*x))
 
-for i in range(0,100):
-    input.append(i)
+r = 2
+x = np.linspace(-r,r,1000)
+y = []
 
-for i in range(1,5):
-    coeff.append(i)
+for i in range(len(x)):
+    y.append(getMeY(x[i],r))
 
-output = computeOutput(input,coeff)
 
-print(f"input(len={len(input)})")
-print(input)
-print(f"coeff(len={len(coeff)})")
-print(coeff)
-print(f"output(len={len(output)})")
-print(output)
+plt.plot(x,y)
+for i in range(len(y)):
+    y[i] = -y[i]
+plt.plot(x,y)
+plt.show()

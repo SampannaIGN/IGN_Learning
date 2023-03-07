@@ -11,7 +11,8 @@ def get_input(size):
 
 iris = datasets.load_iris()
 
-#print(iris.data)
+print(iris.data)
+print(iris.target)
 #=>dict_keys(['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names', 'filename', 'data_module'])
 #print(type(iris.target_names))
 #=>['setosa' 'versicolor' 'virginica']
