@@ -1,0 +1,3 @@
+/home/sampannat/Downloads/Learning/C++/Project/build/test/CMakeFiles/rebuild_cache.dir
+/home/sampannat/Downloads/Learning/C++/Project/build/test/CMakeFiles/edit_cache.dir
+/home/sampannat/Downloads/Learning/C++/Project/build/test/CMakeFiles/DisplayImage.dir
